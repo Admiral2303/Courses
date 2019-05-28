@@ -31,43 +31,6 @@ public class Model {
         this.value = value;
     }
 
-    /**
-     * Checks first word from the string and adds to the result if it is right
-     * @param valueToAdd first word from the phrase
-     * @return result of matches with given string
-     */
-    public boolean addFirstWord(String valueToAdd) {
-        String firstWordRegex = "Hello";
-        if (valueToAdd.matches(firstWordRegex) && !value.matches(firstWordRegex)) {
-            this.value += valueToAdd;
-            return true;
-        }
-        return false;
-    }
-
-    /**
-     * Checks second word from the string and adds to the result if it is right
-     * @param valueToAdd second word from the phrase
-     * @return result of matches with given string
-     */
-    public boolean addSecondWord(String valueToAdd) {
-        String secondWordRegex = "world";
-        if (valueToAdd.matches(secondWordRegex)) {
-            this.value += ", " + valueToAdd + '!';
-            return true;
-        }
-        return false;
-    }
-
-    /**
-     * Checks value string to match with "Hello, world!"
-     * @return result of matches with given string
-     */
-    public boolean checkWholeString() {
-        String helloWorldRegex = "Hello, world!";
-        return value.matches(helloWorldRegex);
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
