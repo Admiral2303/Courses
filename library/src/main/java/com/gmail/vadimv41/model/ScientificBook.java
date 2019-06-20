@@ -3,6 +3,7 @@ package com.gmail.vadimv41.model;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Objects;
 
 public class ScientificBook extends Publication {
     private int cost;
@@ -13,11 +14,6 @@ public class ScientificBook extends Publication {
         super(title, publishDate, new Author(authorName, authorSurname, authorBirthday), pageCount);
         this.cost = cost;
         this.introduction = introduction;
-    }
-
-    @Override
-    public Publication searchByCriteria(String criteria, String criteriaValue) {
-        return null;
     }
 
     public int getCost() {
@@ -36,4 +32,25 @@ public class ScientificBook extends Publication {
         this.introduction = introduction;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ScientificBook that = (ScientificBook) o;
+        return cost == that.cost &&
+                Objects.equals(introduction, that.introduction);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(cost, introduction);
+    }
+
+    @Override
+    public String toString() {
+        return "ScientificBook{" +
+                "cost=" + cost +
+                ", introduction='" + introduction + '\'' +
+                '}';
+    }
 }

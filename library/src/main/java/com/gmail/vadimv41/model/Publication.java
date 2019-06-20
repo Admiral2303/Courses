@@ -8,14 +8,13 @@ public abstract class Publication {
     private Author author;
     private int pageCount;
 
+
     public Publication(String title, LocalDate publishDate, Author author, int pageCount) {
         this.title = title;
         this.publishDate = publishDate;
         this.author = author;
         this.pageCount = pageCount;
     }
-
-    public abstract Publication searchByCriteria(String criteria, String criteriaValue);
 
     public String getTitle() {
         return title;
@@ -47,5 +46,15 @@ public abstract class Publication {
 
     public void setPageCount(int pageCount) {
         this.pageCount = pageCount;
+    }
+
+    @Override
+    public String toString() {
+        return "Publication{" +
+                "title='" + title + '\'' +
+                ", publishDate=" + publishDate +
+                ", author=" + author +
+                ", pageCount=" + pageCount +
+                '}';
     }
 }

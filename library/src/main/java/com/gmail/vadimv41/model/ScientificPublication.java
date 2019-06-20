@@ -15,12 +15,31 @@ public class ScientificPublication extends  Publication {
         listOfPublications = new ArrayList<>();
     }
 
-    @Override
-    public Publication searchByCriteria(String criteria, String criteriaValue) {
-        if(criteria.equals("subject")){
-
-        }
-        throw new IllegalArgumentException("Search criteria is invalid for scientific publication");
+    public void addPublicationToList(Publication publication) {
+        listOfPublications.add(publication);
     }
 
+    public List<Publication> getListOfPublications() {
+        return listOfPublications;
+    }
+
+    public void setListOfPublications(List<Publication> listOfPublications) {
+        this.listOfPublications = listOfPublications;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    @Override
+    public String toString() {
+        return "ScientificPublication{" +
+                "listOfPublications=" + listOfPublications +
+                ", subject='" + subject + '\'' +
+                '}';
+    }
 }
