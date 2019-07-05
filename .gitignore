@@ -59,3 +59,14 @@ nb-configuration.xml
 ## OS X
 ##########################
 .DS_Store
+
+.idea
+.vscode
+coverage
+node_modules
+logs
+jsdoc
+.DS_Store
+npm-debug.log
+package-lock.json
+compiled
